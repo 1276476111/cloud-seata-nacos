@@ -6,14 +6,13 @@
         <groupId>com.qsn</groupId>
         <artifactId>cloud-seata-nacos</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.qsn</groupId>
     <artifactId>common</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>common</name>
+    <packaging>jar</packaging>
     <description>公共包</description>
-
 
     <dependencies>
         <dependency>
@@ -41,6 +40,10 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
@@ -61,13 +64,7 @@
             <artifactId>feign-okhttp</artifactId>
         </dependency>
 
-        <!-- 第三方工具 -->
-        <!-- 阿里的 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>RELEASE</version>
-        </dependency>
+        <!--第三方工具-->
         <!--<dependency>-->
         <!--<groupId>com.alibaba</groupId>-->
         <!--<artifactId>druid-spring-boot-starter</artifactId>-->
@@ -140,11 +137,9 @@
 
     </dependencies>
 
-
-
     <build>
         <plugins>
-            <!-- 项目编译版本 -->
+            <!-- mvn编译版本 -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
@@ -157,9 +152,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.qsn.common.CommonApplication</mainClass>
+                    <layout>ZIP</layout>
+                    <includes>
+                        <include>
+                            <groupId>nothing</groupId>
+                            <artifactId>nothing</artifactId>
+                        </include>
+                    </includes>
+                </configuration>
                 <executions>
                     <execution>
-                        <phase>package</phase>
                         <goals>
                             <goal>repackage</goal>
                         </goals>
@@ -168,8 +172,5 @@
             </plugin>
         </plugins>
     </build>
-
-
-
 
 </project>
