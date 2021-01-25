@@ -25,7 +25,7 @@ import java.util.concurrent.Future;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class UtilTests {
+class ThreadPoolTests {
 
 
     public static void main(String[] args) {
