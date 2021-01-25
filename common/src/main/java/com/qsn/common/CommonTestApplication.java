@@ -2,6 +2,7 @@ package com.qsn.common;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * 公共类
@@ -10,10 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020-01-15
  */
 @SpringBootApplication
-public class CommonApplication {
+@EnableDiscoveryClient
+public class CommonTestApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CommonApplication.class, args);
+        SpringApplication.run(CommonTestApplication.class, args);
     }
 
 }
