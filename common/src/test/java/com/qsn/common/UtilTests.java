@@ -64,9 +64,9 @@ class UtilTests {
             // 使用线程池， 耗时>1秒，<5秒
             Future<List<String>> future = ex.submit(new CallableSubmitTest(strList));
             futureList.add(future);
+            log.info("到这里其实代码已经执行完了， 但是其他五个线程还在执行。");
+            log.info("之所以把线程放在下面执行。 是因为线程都是异步的。 而 future 是获取所有结果的。 想让五个线程都执行完才执行的话， 只能把计算时间的放在 future 的下面");
         }
-        long endTime = System.currentTimeMillis();
-        System.out.println("-------------------调用结束-------------------, 耗时为:" + String.valueOf(endTime - startTime));
 
 
         System.out.println("--------------------结果开始-----------------------");
@@ -76,6 +76,10 @@ class UtilTests {
             System.out.println("处理的结果:【" + Arrays.toString(strList.toArray()) + "】");
         }
         System.out.println("--------------------结果结束-----------------------");
+
+
+        long endTime = System.currentTimeMillis();
+        System.out.println("-------------------调用结束-------------------, 耗时为:" + String.valueOf(endTime - startTime));
 
     }
 
