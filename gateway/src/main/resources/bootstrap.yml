@@ -1,0 +1,18 @@
+server:
+  port: 8222
+spring:
+  application:
+    name: gateway-service
+  #  profiles:
+  #    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      #        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
+      #        namespace:
+      config:
+        server-addr: 127.0.0.1:8848
+        #        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
+        #        namespace:
+        file-extension: yml
