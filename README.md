@@ -4,31 +4,31 @@
     主要用于尝试新技术并进行整合测试，最终用于实践<br/>
 
 **环境:**
-    jdk 1.8
-    maven 3.6.3
+    <br/>jdk 1.8
+    <br/>maven 3.6.3
     
 
 **工具:**
-    idea 2020.3
-    git
-    postman
-    navicat15
-    xshell
-    mobaxterm
-    redis-desktop-manager
-    sublime-test
+    <br/>idea 2020.3
+    <br/>git
+    <br/>postman
+    <br/>navicat15
+    <br/>xshell
+    <br/>mobaxterm
+    <br/>redis-desktop-manager
+    <br/>sublime-test
     
 **框架：**
-    springcloud 
-    nacos
-    feign
-    mysql 8.0
-    mybatis-plus(代码生成器待实现)
-    gateway
-    redis(单机，待完善集群)
-    rocketMQ（单机，待完善集群）
-    seata(待分布式测试)
-    zookeeper(待完成)
+    <br/>springcloud 
+    <br/>nacos
+    <br/>feign
+    <br/>mysql 8.0
+    <br/>mybatis-plus(代码生成器待实现)
+    <br/>gateway
+    <br/>redis(单机，待完善集群)
+    <br/>rocketMQ（单机，待完善集群）
+    <br/>seata(待分布式测试)
+    <br/>zookeeper(待完成)
     
 **技术：**
     多线程-线程池（这里需要做成统一管理的工具类）
