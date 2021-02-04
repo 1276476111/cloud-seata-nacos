@@ -15,7 +15,7 @@
     </modules>
     <properties>
         <java.version>1.8</java.version>
-        <maven.plugin.version>2.4.1</maven.plugin.version>
+        <maven.plugin.version>2.4.2</maven.plugin.version>
         <springboot.version>2.3.2.RELEASE</springboot.version>
         <cloud.alibaba.version>2.2.3.RELEASE</cloud.alibaba.version>
         <cloud.dependencies.version>Hoxton.SR8</cloud.dependencies.version>
