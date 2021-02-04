@@ -5,7 +5,18 @@
 
 环境:
     jdk 1.8
-    maven 3.5.4
+    maven 3.6.3
+    
+
+工具:
+    idea 2020.3
+    git
+    postman
+    navicat15
+    xshell
+    mobaxterm
+    redis-desktop-manager
+    sublime-test
     
 框架：
     springcloud 
