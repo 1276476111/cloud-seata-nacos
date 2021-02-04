@@ -3,7 +3,7 @@
 <br/>&nbsp;&nbsp; 使用架构为主流的Spring Cloud Alibaba
 <br/>&nbsp;&nbsp; 主要用于尝试新技术并进行整合测试，最终用于实践
 
-# 环境
+## 环境
 <br/>&nbsp;&nbsp; jdk 1.8
 <br/>&nbsp;&nbsp; maven 3.6.3
     
@@ -57,5 +57,4 @@
 <br/>&nbsp;&nbsp; 系统模块（优化管理员管理、优化权限系统、优化菜单管理）
 <br/>&nbsp;&nbsp; 地区（标准化省市区数据，用于地区管理）
     
-使用:---------:居中
-:---------:
+
