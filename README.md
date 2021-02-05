@@ -14,6 +14,7 @@
 <br/>&nbsp;&nbsp; postman
 <br/>&nbsp;&nbsp; navicat15
 <br/>&nbsp;&nbsp; xshell
+<br/>&nbsp;&nbsp; mobaXterm
 <br/>&nbsp;&nbsp; mobaxterm
 <br/>&nbsp;&nbsp; redis-desktop-manager
 <br/>&nbsp;&nbsp; sublime-test
@@ -28,6 +29,7 @@
 <br/>&nbsp;&nbsp; redis(单机，待完善集群)
 <br/>&nbsp;&nbsp; rocketMQ（单机，待完善集群）
 <br/>&nbsp;&nbsp; seata(待分布式测试)
+<br/>&nbsp;&nbsp; xxl-job(待完成)
 <br/>&nbsp;&nbsp; zookeeper(待完成)
     
 ## 技术
@@ -35,11 +37,11 @@
 <br/>&nbsp;&nbsp; 代码生成器
 <br/>&nbsp;&nbsp; fastjson
 <br/>&nbsp;&nbsp; lombok
-<br/>&nbsp;&nbsp; ali-durid(连接池滚阿联)
-<br/>&nbsp;&nbsp; commons-lang(StringUtils工具)
-<br/>&nbsp;&nbsp; aop
-<br/>&nbsp;&nbsp; pagehelper
-<br/>&nbsp;&nbsp; mvn插件(打包,压缩等)
+<br/>&nbsp;&nbsp; ali-durid     (阿里连接池)
+<br/>&nbsp;&nbsp; commons-lang  (StringUtils工具)
+<br/>&nbsp;&nbsp; aop           (切面)
+<br/>&nbsp;&nbsp; pagehelper    (分页)
+<br/>&nbsp;&nbsp; mvn插件       (打包,压缩等)
     
 ## 工具类
 <br/>&nbsp;&nbsp; hutool(包含md5、验证码图片生成等)
@@ -49,7 +51,51 @@
 <br/>&nbsp;&nbsp; 数字工具类(统一生成不重复的数字, 可用于订单编号、第二主键等)
 <br/>&nbsp;&nbsp; 加密工具 Aes、md5
 <br/>&nbsp;&nbsp; 上传工具(阿里上传等)
-    
+
+## 用于开发的模块
+### 首页
+- 统计数：用户总量、各类型订单总量
+- 浏览页面趋势图、离开页面趋势图
+- 支付订单趋势图、退款订单趋势图
+- 好评订单趋势图、差评订单趋势图
+
+### 系统管理
+- 管理员
+- 权限
+- 菜单
+
+### 会员管理
+- 会员信息
+- 收藏记录
+- 历史浏览记录
+
+### 商品管理
+- 商品信息
+- 标签分类
+
+### 订单管理
+- 预支付订单
+- 正式订单
+
+### 字典管理
+- 通用地区
+
+### 财务管理
+- 支付流水
+- 退款流水
+
+### 日志管理
+- 操作日志
+- 异常日志
+
+### 客服管理
+- 留言板
+
+### 工单管理
+- 申请退款
+- 审核退款
+
+
 ## 用于测试模块
 <br/>&nbsp;&nbsp; 代码生成器模块
 <br/>&nbsp;&nbsp; 会员模块（用于测用户订单并发等）
