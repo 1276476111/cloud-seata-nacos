@@ -5,8 +5,13 @@ import com.alibaba.fastjson.JSONObject;
 import com.qsn.order.feign.TestFeign;
 import com.qsn.order.model.service.OrderService;
 import com.qsn.order.test.entity.TestEntity;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +24,7 @@ import java.util.List;
  * @author qiusn
  * @date 2021-01-08
  */
+@Api(tags = "接口所在的类")
 @Slf4j
 @RestController
 @RequestMapping("/api/test/order")
@@ -88,17 +94,22 @@ public class OrderController {
     @Resource
     private TestFeign testFeign;
 
+    @ApiOperation(value = "接口名", notes = "接口描述", httpMethod = "POST")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "length", value = "参数1", required = true, paramType = "path"),
+            @ApiImplicitParam(name = "size", value = "参数2", required = true, paramType = "query"),
+            @ApiImplicitParam(name = "page", value = "参数3", required = true, paramType = "header"),
+            @ApiImplicitParam(name = "total", value = "参数4", required = true, paramType = "form"),
+            @ApiImplicitParam(name = "start", value = "参数5", dataType = "string", paramType = "body")
+    })
     @PostMapping(value = "/user/list")
-    public List<TestEntity> list() {
+    public List<TestEntity> list(@RequestBody TestEntity testEntity) {
         return testFeign.list(new JSONObject());
     }
 
-
     @PostMapping(value = "/insert")
     public List<TestEntity> insert() {
-
         orderService.seataInsert();
-
         return null;
     }
 

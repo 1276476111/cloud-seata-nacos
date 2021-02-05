@@ -16,3 +16,22 @@ spring:
         #        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
         #        namespace:
         file-extension: yml
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          lower-case-service-id: true
+      routes:
+        #netty 路由过滤器(数组)，http或https开头 lb://代表是服务的名称  predicates:表示会过滤掉的请求头
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - StripPrefix=1
+      #处理跨域请求问题
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
