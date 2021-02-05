@@ -19,6 +19,11 @@ spring:
 #        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
 #        namespace:
         file-extension: yml
+      # 公共配置
+      extension-configs[0]:
+        data-id: share-config.yml
+        group: SHARE_GROUP
+        refresh: true
 
 logging:
   level:
