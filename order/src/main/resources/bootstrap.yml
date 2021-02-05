@@ -5,30 +5,36 @@ spring:
   main:
     allow-bean-definition-overriding: true
   application:
-    name: order-service
-#  profiles:
-#    active: dev
+    name: stock-service
+  #  profiles:
+  #    active: dev
   cloud:
+    #指定nacos配置
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-#        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
-#        namespace:
+        # public环境
+        namespace:
+      #        # 自定义的环境（dev/test）
+      #        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
       config:
         server-addr: 127.0.0.1:8848
-#        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
-#        namespace:
+        #        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
+        namespace:
         file-extension: yml
-      # 公共配置
-      extension-configs[0]:
-        data-id: share-config.yml
-        group: SHARE_GROUP
-        refresh: true
+        # 公共配置
+        extension-configs[0]:
+          data-id: share-config.yml
+          group: SHARE_GROUP
+          refresh: true
+    #指定seata配置
+    alibaba:
+      seata:
+        tx-service-group: DEFAULT_GROUP
 
 logging:
   level:
     com.alibaba.nacos.client.*: WARN
-
 ### ----------------------------nacos-公用配置开始---------------------------- ###
 ##数据源配置
 #spring:

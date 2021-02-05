@@ -12,8 +12,10 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-#        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
+        # public环境
         namespace:
+#        # 自定义的环境（dev/test）
+#        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
       config:
         server-addr: 127.0.0.1:8848
 #        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
