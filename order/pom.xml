@@ -49,6 +49,18 @@
             <version>2.9.2</version>
         </dependency>
 
+        <!--整合Knife4j-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.xiaoymin</groupId>-->
+<!--            <artifactId>knife4j-micro-spring-boot-starter</artifactId>-->
+<!--            <version>${knife4j.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.xiaoymin</groupId>-->
+<!--            <artifactId>knife4j-spring-boot-starter</artifactId>-->
+<!--            <version>${knife4j.version}</version>-->
+<!--        </dependency>-->
+
 <!--         swagger-spring-boot-->
 <!--        <dependency>-->
 <!--            <groupId>com.spring4all</groupId>-->

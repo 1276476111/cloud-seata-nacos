@@ -1,4 +1,4 @@
-package com.qsn.gateway.controller;
+package com.qsn.gateway.conf.swagger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,20 +10,19 @@ import springfox.documentation.swagger.web.*;
 import java.util.List;
 
 /**
- * @description: 用于加载swagger中相关信息的controller
- * @Author: 
- * @Date: 2020/2/11 11:27
+ * swagger聚合接口，三个接口都是swagger-ui.html需要访问的接口
+ *
+ * @author ksyzz
+ * @since <pre>2019/04/09</pre>
  */
 @RestController
 @RequestMapping("/swagger-resources")
 public class SwaggerResourceController {
+    private MySwaggerResourceProvider swaggerResourceProvider;
 
-    private SwaggerProvider swaggerProvider;
-
-    // TODO: 添加权限校验
     @Autowired
-    public SwaggerResourceController(SwaggerProvider swaggerProvider) {
-        this.swaggerProvider = swaggerProvider;
+    public SwaggerResourceController(MySwaggerResourceProvider swaggerResourceProvider) {
+        this.swaggerResourceProvider = swaggerResourceProvider;
     }
 
     @RequestMapping(value = "/configuration/security")
@@ -38,6 +37,6 @@ public class SwaggerResourceController {
 
     @RequestMapping
     public ResponseEntity<List<SwaggerResource>> swaggerResources() {
-        return new ResponseEntity<>(swaggerProvider.get(), HttpStatus.OK);
+        return new ResponseEntity<>(swaggerResourceProvider.get(), HttpStatus.OK);
     }
 }

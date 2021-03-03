@@ -12,10 +12,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class CommonTestApplication {
+public class CommonApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CommonTestApplication.class, args);
+        SpringApplication.run(CommonApplication.class, args);
     }
 
 }
