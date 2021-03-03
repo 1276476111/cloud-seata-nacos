@@ -29,15 +29,15 @@ spring:
             - Path=/api/order/**
           filters:
             - StripPrefix=1
+        - id: stock-service
+          uri: lb://stock-service
+          predicates:
+            - Path=/api/stock/**
+          filters:
+            - StripPrefix=1
       #处理跨域请求问题
       globalcors:
         cors-configurations:
           '[/**]':
             allowedOrigins: "*"
             allowedMethods: "*"
-#
-#springfox:
-#  documentation:
-#    swagger:
-#      v2:
-#        path: /api-docs

@@ -5,6 +5,7 @@ import com.qsn.order.feign.TestFeign;
 import com.qsn.order.test.entity.TestEntity;
 import com.qsn.order.test.service.TestService;
 import io.seata.spring.annotation.GlobalTransactional;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import javax.annotation.Resource;
  *
  * @date 2020 01-0
  */
+@Api(tags = "测试接口")
 @RestController
 @RequestMapping(value = "api/order/test")
 public class OrderTestController {
