@@ -15,8 +15,8 @@ import java.util.List;
  * @author ksyzz
  * @since <pre>2019/04/09</pre>
  */
-@RestController
-@RequestMapping("/swagger-resources")
+//@RestController
+//@RequestMapping("/swagger-resources")
 public class SwaggerResourceController {
     private MySwaggerResourceProvider swaggerResourceProvider;
 

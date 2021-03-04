@@ -21,7 +21,7 @@ import java.util.List;
  * @data 21020-01-04
  */
 @RestController
-@RequestMapping(value = "api/test")
+@RequestMapping(value = "api/stock")
 public class StockTestController {
     @Resource
     private YmlConfig ymlConfig;

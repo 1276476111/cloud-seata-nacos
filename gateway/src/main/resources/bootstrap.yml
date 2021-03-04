@@ -9,35 +9,62 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-      #        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
-      #        namespace:
+        #        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
+        #        namespace:
       config:
         server-addr: 127.0.0.1:8848
         #        namespace: 2619670c-d55b-407d-bda5-e0f510a37fe6
         #        namespace:
+        group: DEFAULT_GROUP
         file-extension: yml
     gateway:
-      enabled: true
       discovery:
         locator:
+          # 是否和服务注册与发现组件进行整合; 设置为 true 后可以直接使用应用名称调用服务， 即在nacos等注册中心中可以发现服务
+          enabled: true
+#          # 将路由的路径修改为小写的服务ID
           lower-case-service-id: true
+      # 路由（routes：路由，它由唯一标识（ID）、目标服务地址（uri）、一组断言（predicates）和一组过滤器组成（filters）。filters 不是必需参数。）
       routes:
-        #netty 路由过滤器(数组)，http或https开头 lb://代表是服务的名称  predicates:表示会过滤掉的请求头
+        # 路由标识（id：标识，具有唯一性）
         - id: order-service
+          # 目标服务地址（通过名字来转发， 也可以是地址）
           uri: lb://order-service
+          # 路由条件（predicates：断言，匹配 HTTP 请求内容; 当路径为 /api/order 的 跳转 order-service 服务下）
           predicates:
-            - Path=/api/order/**
-          filters:
-            - StripPrefix=1
+            - Path=/api/order/** #匹配 如 localhost:3001/consumer/test的请求地址
+            # - After=2019-01-01T00:00:00+08:00[Asia/Shanghai]  匹配 2019年1月1日0点0分0秒之后的所有请求， -Before 为之前
+            # - Between=2019-01-01T00:00:00+08:00[Asia/Shanghai], 2019-07-01T00:00:00+08:00[Asia/Shanghai] 时间范围之内
+            # - Header=X-Request-Id, \d+  请求头匹配
+            # - Host=**.baidu.com  host域名匹配,  www.baidu.com,md.baidu.com
+            # - Method=GET  请求方式匹配
+            # - Query=smile  请求参数匹配  ,eg:localhost:8080?smile=x&id=2
+            # - RemoteAddr=192.168.1.1/24 ,ip地址匹配
+            # 各种 Predicates 同时存在于同一个路由时，请求必须同时满足所有的条件才被这个路由匹配
+#          filters:
+#            - SwaggerHeaderFilter
+#            - StripPrefix=1
         - id: stock-service
           uri: lb://stock-service
           predicates:
             - Path=/api/stock/**
-          filters:
-            - StripPrefix=1
-      #处理跨域请求问题
+#          filters:
+#            - StripPrefix=1 # 移除前缀
+#      处理跨域请求问题
       globalcors:
         cors-configurations:
           '[/**]':
             allowedOrigins: "*"
             allowedMethods: "*"
+
+## 白名单这里是自己取得， 不是框架自带的
+#secure:
+#  ignore:
+#    urls: #配置白名单路径
+#      - /v2/api-docs
+#      - /druid/**
+#      - /admin/login
+
+
+
+

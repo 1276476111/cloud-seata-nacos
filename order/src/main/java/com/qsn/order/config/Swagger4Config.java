@@ -1,5 +1,4 @@
-package com.qsn.stock.config;
-import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
+package com.qsn.order.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -17,8 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 //@EnableSwagger2
 //@Configuration
-//@EnableKnife4j
-public class SwaggerServersConfig {
+public class Swagger4Config {
 
     /**
      * 创建API
@@ -42,7 +40,7 @@ public class SwaggerServersConfig {
     private ApiInfo apiInfo(String version) {
         // 用ApiInfoBuilder进行定制
         return new ApiInfoBuilder()
-                .title("stock的接口文档")
+                .title("order的接口文档")
                 .version(version)
                 .build();
     }

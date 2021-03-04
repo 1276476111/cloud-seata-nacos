@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @FeignClient("stock-service")
-@RequestMapping(value = "api/test")
+@RequestMapping(value = "api/stock")
 public interface TestFeign {
 
     /**

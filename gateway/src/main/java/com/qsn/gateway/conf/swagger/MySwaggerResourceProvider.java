@@ -30,7 +30,7 @@ import java.util.Set;
  * @author ksyzz
  * @since <pre>2019/04/09</pre>
  */
-@Component
+//@Component
 public class MySwaggerResourceProvider implements SwaggerResourcesProvider {
 
     /**
@@ -72,7 +72,6 @@ public class MySwaggerResourceProvider implements SwaggerResourcesProvider {
             if (!dealed.contains(url)) {
                 dealed.add(url);
                 SwaggerResource swaggerResource = new SwaggerResource();
-                swaggerResource.setLocation("7000");
                 swaggerResource.setUrl(url);
                 swaggerResource.setName(instance);
                 resources.add(swaggerResource);

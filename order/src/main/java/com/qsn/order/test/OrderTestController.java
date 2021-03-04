@@ -22,7 +22,7 @@ import javax.annotation.Resource;
  */
 @Api(tags = "测试接口")
 @RestController
-@RequestMapping(value = "api/order/test")
+@RequestMapping(value = "api/order")
 public class OrderTestController {
     @Resource
     private TestService testService;

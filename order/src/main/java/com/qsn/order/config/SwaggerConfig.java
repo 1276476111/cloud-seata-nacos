@@ -1,5 +1,6 @@
 package com.qsn.order.config;
-import org.springframework.context.annotation.Bean;
+
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -9,39 +10,31 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-/**
- * @description: 配置描述swagger的描述
- * @Author:
- * @Date: 2020/2/11 11:47
- */
+
+
 @EnableSwagger2
 @Configuration
-public class SwaggerServersConfig {
+@EnableKnife4j
+public class SwaggerConfig {
 
-    /**
-     * 创建API
-     */
-    @Bean
-    public Docket createRestApi() {
+
+    public Docket groupRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                // 详细定制
-                .apiInfo(apiInfo("1.0.0"))
+                .apiInfo(groupApiInfo())
                 .select()
-                // 指定扫描的包路径
                 .apis(RequestHandlerSelectors.basePackage("com.qsn.order"))
-                // 扫描所有
                 .paths(PathSelectors.any())
                 .build();
     }
 
-    /**
-     * 添加摘要信息
-     */
-    private ApiInfo apiInfo(String version) {
-        // 用ApiInfoBuilder进行定制
+    private ApiInfo groupApiInfo() {
         return new ApiInfoBuilder()
-                .title("order的接口文档")
-                .version(version)
+                .title("swagger-bootstrap-ui很棒~~~！！！")
+                .description("<div style='font-size:14px;color:red;'>swagger-bootstrap-ui-demo RESTful APIs</div>")
+                .termsOfServiceUrl("http://www.group.com/")
+                .version("1.0")
                 .build();
     }
+
+
 }

@@ -27,7 +27,7 @@ import java.util.List;
 @Api(tags = "接口所在的类")
 @Slf4j
 @RestController
-@RequestMapping("/api/test/order")
+@RequestMapping("/api/order")
 public class OrderController {
 
 //    /**
@@ -102,7 +102,7 @@ public class OrderController {
             @ApiImplicitParam(name = "total", value = "参数4", required = true, paramType = "form"),
             @ApiImplicitParam(name = "start", value = "参数5", dataType = "string", paramType = "body")
     })
-    @PostMapping(value = "/user/list")
+    @PostMapping(value = "/list")
     public List<TestEntity> list(@RequestBody TestEntity testEntity) {
         return testFeign.list(new JSONObject());
     }

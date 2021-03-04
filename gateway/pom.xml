@@ -17,17 +17,18 @@
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
-        <!--        spring-boot-start-web依赖与Spring Cloud网关不兼容需要删除-->
-        <!--        因为spring cloud gateway是基于webflux的，如果非要web支持的话需要导入spring-boot-starter-webflux而不是spring-boot-start-web -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
+        <!-- 网关gateway -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
-        <!--        gson-->
+        <!-- web！ 由于spring-boot-start-web依赖与Spring Cloud网关不兼容需要删除-->
+        <!-- 因为spring cloud gateway是基于webflux的，如果非要web支持的话需要导入spring-boot-starter-webflux而不是spring-boot-start-web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <!-- gson-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -37,7 +38,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!--    nacos -->
+        <!-- nacos -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
@@ -46,34 +47,29 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-
-        <!--        这里不引common包的原因是因为common里面包含jdbc， 加了这个包必须要配置。 而gateway不需要这个包。 -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.qsn</groupId>-->
-        <!--            <artifactId>common</artifactId>-->
-        <!--            <version>1.0.0-SNAPSHOT</version>-->
-        <!--        spring-boot-start-web依赖与Spring Cloud网关不兼容需要删除-->
-        <!--            <exclusions>-->
-        <!--                <exclusion>-->
-        <!--                    <groupId>org.springframework.boot</groupId>-->
-        <!--                    <artifactId>spring-boot-starter-webflux</artifactId>-->
-        <!--                </exclusion>-->
-        <!--            </exclusions>-->
-        <!--        </dependency>-->
-
-        <!--        swagger2 -->
+        <!-- 内置log4j日志 -->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
-
+        <!-- knife4j 网关（swagger2增强版）-->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>2.0.4</version>
         </dependency>
-
+        <!--        knife4j-单体结构swagger的jar-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+<!--&lt;!&ndash;        另说，如果在gateway上没有接口的话，单纯得引入ui也是可以的：&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.xiaoymin</groupId>-->
+<!--            <artifactId>knife4j-spring-ui</artifactId>-->
+<!--            <version>2.0.4</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>
