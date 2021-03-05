@@ -4,53 +4,54 @@
 <br/>&nbsp;&nbsp; 主要用于尝试新技术并进行整合测试，最终用于实践
 
 ## 环境
-<br/>&nbsp;&nbsp; jdk 1.8
-<br/>&nbsp;&nbsp; maven 3.6.3
+- jdk 1.8
+- maven 3.6.3
     
 
 ## 工具
-<br/>&nbsp;&nbsp; idea 2020.3
-<br/>&nbsp;&nbsp; git
-<br/>&nbsp;&nbsp; postman
-<br/>&nbsp;&nbsp; navicat15
-<br/>&nbsp;&nbsp; xshell
-<br/>&nbsp;&nbsp; mobaXterm
-<br/>&nbsp;&nbsp; mobaxterm
-<br/>&nbsp;&nbsp; redis-desktop-manager
-<br/>&nbsp;&nbsp; sublime-test
+- idea 2020.3
+- git
+- postman
+- navicat15
+- xshell
+- mobaXterm
+- mobaxterm
+- redis-desktop-manager
+- sublime-test3
     
 ## 框架
-<br/>&nbsp;&nbsp; springcloud 
-<br/>&nbsp;&nbsp; nacos
-<br/>&nbsp;&nbsp; feign
-<br/>&nbsp;&nbsp; mysql 8.0
-<br/>&nbsp;&nbsp; mybatis-plus(代码生成器待实现)
-<br/>&nbsp;&nbsp; gateway
-<br/>&nbsp;&nbsp; redis(单机，待完善集群)
-<br/>&nbsp;&nbsp; rocketMQ（单机，待完善集群）
-<br/>&nbsp;&nbsp; seata(待分布式测试)
-<br/>&nbsp;&nbsp; xxl-job(待完成)
-<br/>&nbsp;&nbsp; zookeeper(待完成)
+- springcloud 
+- nacos
+- feign
+- mysql 8.0
+- mybatis-plus
+- gateway
+- knife4j
+- redis
+- rocketMQ
+- seata
+- xxl-job
+- zookeeper(待完成)
     
 ## 技术
-<br/>&nbsp;&nbsp; 多线程-线程池（这里需要做成统一管理的工具类）
-<br/>&nbsp;&nbsp; 代码生成器
-<br/>&nbsp;&nbsp; fastjson
-<br/>&nbsp;&nbsp; lombok
-<br/>&nbsp;&nbsp; ali-durid     (阿里连接池)
-<br/>&nbsp;&nbsp; commons-lang  (StringUtils工具)
-<br/>&nbsp;&nbsp; aop           (切面)
-<br/>&nbsp;&nbsp; pagehelper    (分页)
-<br/>&nbsp;&nbsp; mvn插件       (打包,压缩等)
+- 多线程-线程池（这里需要做成统一管理的工具类）
+- 代码生成器
+- fastjson
+- lombok
+- ali-durid     (阿里连接池)
+- commons-lang  (StringUtils工具)
+- aop           (切面)
+- pagehelper    (分页)
+- mvn插件       (打包,压缩等)
     
 ## 工具类
-<br/>&nbsp;&nbsp; hutool(包含md5、验证码图片生成等)
-<br/>&nbsp;&nbsp; 获取日期工具类
-<br/>&nbsp;&nbsp; 手机号检验类
-<br/>&nbsp;&nbsp; 地区经纬度工具类
-<br/>&nbsp;&nbsp; 数字工具类(统一生成不重复的数字, 可用于订单编号、第二主键等)
-<br/>&nbsp;&nbsp; 加密工具 Aes、md5
-<br/>&nbsp;&nbsp; 上传工具(阿里上传等)
+- hutool(包含md5、验证码图片生成等)
+- 获取日期工具类
+- 手机号检验类
+- 地区经纬度工具类
+- 数字工具类(统一生成不重复的数字, 可用于订单编号、第二主键等)
+- 加密工具 Aes、md5
+- 上传工具(阿里上传等)
 
 ## 用于开发的模块
 ### 首页

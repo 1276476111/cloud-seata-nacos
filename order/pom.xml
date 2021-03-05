@@ -36,19 +36,6 @@
             <version>4.2.0</version>
         </dependency>
 
-<!--        &lt;!&ndash;        knife4j-单体结构swagger的jar&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.github.xiaoymin</groupId>-->
-<!--            <artifactId>knife4j-micro-spring-boot-starter</artifactId>-->
-<!--            <version>2.0.4</version>-->
-<!--        </dependency>-->
-        <!--        knife4j-集群结构swagger的jar-->
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-boot-starter</artifactId>
-            <version>2.0.4</version>
-        </dependency>
-
     </dependencies>
 
 

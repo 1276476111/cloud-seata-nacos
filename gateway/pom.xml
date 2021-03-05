@@ -56,20 +56,8 @@
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-spring-boot-starter</artifactId>
-            <version>2.0.4</version>
         </dependency>
-        <!--        knife4j-单体结构swagger的jar-->
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-micro-spring-boot-starter</artifactId>
-            <version>2.0.4</version>
-        </dependency>
-<!--&lt;!&ndash;        另说，如果在gateway上没有接口的话，单纯得引入ui也是可以的：&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.github.xiaoymin</groupId>-->
-<!--            <artifactId>knife4j-spring-ui</artifactId>-->
-<!--            <version>2.0.4</version>-->
-<!--        </dependency>-->
+
     </dependencies>
 
     <build>
