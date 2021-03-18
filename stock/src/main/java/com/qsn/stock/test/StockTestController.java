@@ -45,12 +45,11 @@ public class StockTestController {
     }
 
 
-
     @PostMapping(value = "/insert")
     public List<TestEntity> insert() {
-        if(true){
-            throw new ApiException("异常奥");
-        }
+//        if(true){
+//            throw new ApiException("异常奥");
+//        }
         TestEntity testEntity = new TestEntity();
         testEntity.setName("南哥111");
         testEntity.setAge(18);

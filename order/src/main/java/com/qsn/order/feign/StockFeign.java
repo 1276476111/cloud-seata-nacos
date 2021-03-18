@@ -9,9 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
+/**
+ * 调用库存模块
+ *
+ * @author iqusn
+ * @date 2021-03-09
+ */
 @FeignClient("stock-service")
 @RequestMapping(value = "api/stock")
-public interface TestFeign {
+public interface StockFeign {
 
     /**
      * 新增数据， 用于测试事务
@@ -19,6 +25,12 @@ public interface TestFeign {
     @PostMapping(value = "/insert")
     void insert();
 
+    /**
+     * 查询集合
+     *
+     * @param jsonObject
+     * @return
+     */
     @PostMapping(value = "/list")
     List<TestEntity> list(@RequestBody JSONObject jsonObject);
 }

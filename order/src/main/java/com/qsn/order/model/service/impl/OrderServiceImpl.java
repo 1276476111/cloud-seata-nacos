@@ -1,6 +1,7 @@
 package com.qsn.order.model.service.impl;
 
-import com.qsn.order.feign.TestFeign;
+import com.baomidou.mybatisplus.extension.exceptions.ApiException;
+import com.qsn.order.feign.StockFeign;
 import com.qsn.order.model.entity.Order;
 import com.qsn.order.model.mapper.OrderMapper;
 import com.qsn.order.model.service.OrderService;
@@ -48,7 +49,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Resource
-    private TestFeign testFeign;
+    private StockFeign stockFeign;
 
     @Override
     @GlobalTransactional
@@ -61,9 +62,12 @@ public class OrderServiceImpl implements OrderService {
         order.setCommodityCode("呵呵呵呵呵呵");
         insertOrder(order);
 
-
         // 创建用户
-        testFeign.insert();
+        try {
+            stockFeign.insert();
+        }catch (Exception e){
+            throw new ApiException("库存服务调用异常");
+        }
 
     }
 

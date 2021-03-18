@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import springfox.documentation.swagger.web.SwaggerResource;
 import springfox.documentation.swagger.web.SwaggerResourcesProvider;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -30,7 +31,7 @@ public class SwaggerProvider implements SwaggerResourcesProvider {
     /**
      * 路由加载器
      */
-    @Autowired
+    @Resource
     private RouteLocator routeLocator;
 
     /**

@@ -2,7 +2,7 @@ package com.qsn.order.model.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.qsn.order.feign.TestFeign;
+import com.qsn.order.feign.StockFeign;
 import com.qsn.order.model.service.OrderService;
 import com.qsn.order.test.entity.TestEntity;
 import io.swagger.annotations.Api;
@@ -30,71 +30,13 @@ import java.util.List;
 @RequestMapping("/api/order")
 public class OrderController {
 
-//    /**
-//     * 分页
-//     *
-//     * @param pageForm 分页参数及查询条件
-//     * @return 分页信息
-//     */
-//    @PostMapping("/order/listPage")
-//    public JSONObject listPageOrder(@RequestBody PageForm<Order> pageForm){
-//        PageData<Order> page = orderService.listPageOrder(pageForm);
-//        return Result.success(page);
-//    }
-//
-//    /**
-//     * 列表
-//     *
-//     * @param order 查询条件
-//     * @return 列表信息
-//     */
-//    @PostMapping("/order/list")
-//    public Result listOrder(@RequestBody Order order) {
-//        List<Order> list = orderService.listOrder(order);
-//        return Result.success(list);
-//    }
-//
-//    /**
-//     * 新增
-//     *
-//     * @param order 新增信息
-//     * @return 成功或失败
-//     */
-//    @PostMapping("/order/insert")
-//    public Result insertOrder(@RequestBody Order order) {
-//        return orderService.insertOrder(order) ? Result.success() : Result.error("新增信息失败");
-//    }
-//
-//    /**
-//     * 修改
-//     *
-//     * @param order 根据主键修改信息
-//     * @return 成功或失败
-//     */
-//    @PostMapping("/order/updateById")
-//    public Result updateOrderById(@RequestBody Order order) {
-//        return orderService.updateOrderById(order) ? Result.success() : Result.error("修改信息失败");
-//    }
-//
-//    /**
-//     * 详情
-//     *
-//     * @param order 根据主键获取详情
-//     * @return 详情
-//     */
-//    @PostMapping("/order/getById")
-//    public Result getOrderById(@RequestBody Order order) {
-//        Order detail = orderService.getOrderById(order);
-//        return Result.success(detail);
-//    }
-//
 
     @Resource
     private OrderService orderService;
     @Resource
-    private TestFeign testFeign;
+    private StockFeign stockFeign;
 
-    @ApiOperation(value = "接口名", notes = "接口描述", httpMethod = "POST")
+    @ApiOperation(value = "库存列表", notes = "通过feign调用查询库存列表", httpMethod = "POST")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "length", value = "参数1", required = true, paramType = "path"),
             @ApiImplicitParam(name = "size", value = "参数2", required = true, paramType = "query"),
@@ -104,13 +46,25 @@ public class OrderController {
     })
     @PostMapping(value = "/list")
     public List<TestEntity> list(@RequestBody TestEntity testEntity) {
-        return testFeign.list(new JSONObject());
+        log.info("请求参数为：【{}】", JSONObject.toJSONString(testEntity));
+        return stockFeign.list(new JSONObject());
     }
 
+    @ApiOperation(value = "新增订单与库存", notes = "用于测试seata分布式事务", httpMethod = "POST")
     @PostMapping(value = "/insert")
     public List<TestEntity> insert() {
         orderService.seataInsert();
         return null;
+    }
+
+    @PostMapping(value = "/test")
+    public JSONObject test(@RequestBody JSONObject jsonObject) {
+        TestEntity testEntity = new TestEntity();
+        testEntity.setAge(100);
+        testEntity.setName("哈哈哈哈哈哈哈哈");
+        testEntity.setName("嗯嗯");
+        stockFeign.insert();
+        return jsonObject;
     }
 
 }
