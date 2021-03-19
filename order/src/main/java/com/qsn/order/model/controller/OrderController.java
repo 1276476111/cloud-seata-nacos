@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.core.async.AsyncLoggerContextSelector;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,7 +47,11 @@ public class OrderController {
     })
     @PostMapping(value = "/list")
     public List<TestEntity> list(@RequestBody TestEntity testEntity) {
-        log.info("请求参数为：【{}】", JSONObject.toJSONString(testEntity));
+        log.debug("debug请求参数为：【{}】", JSONObject.toJSONString(testEntity));
+        log.info("info请求参数为：【{}】", JSONObject.toJSONString(testEntity));
+        log.error("error请求参数为：【{}】", JSONObject.toJSONString(testEntity));
+
+        log.info("是否为异步日志：{}", AsyncLoggerContextSelector.isSelected());
         return stockFeign.list(new JSONObject());
     }
 
