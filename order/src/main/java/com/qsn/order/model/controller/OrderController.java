@@ -3,6 +3,7 @@ package com.qsn.order.model.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.qsn.order.feign.StockFeign;
+import com.qsn.order.model.entity.Order;
 import com.qsn.order.model.service.OrderService;
 import com.qsn.order.test.entity.TestEntity;
 import io.swagger.annotations.Api;
@@ -46,13 +47,18 @@ public class OrderController {
             @ApiImplicitParam(name = "start", value = "参数5", dataType = "string", paramType = "body")
     })
     @PostMapping(value = "/list")
-    public List<TestEntity> list(@RequestBody TestEntity testEntity) {
+    public List<Order> list(@RequestBody TestEntity testEntity) {
         log.debug("debug请求参数为：【{}】", JSONObject.toJSONString(testEntity));
         log.info("info请求参数为：【{}】", JSONObject.toJSONString(testEntity));
         log.error("error请求参数为：【{}】", JSONObject.toJSONString(testEntity));
 
         log.info("是否为异步日志：{}", AsyncLoggerContextSelector.isSelected());
-        return stockFeign.list(new JSONObject());
+        // 调用stock查询
+//        List<TestEntity> testEntityList = stockFeign.list(new JSONObject());
+        // 订单查询
+        List<Order> orderList = orderService.listOrder(new Order());
+
+        return orderList;
     }
 
     @ApiOperation(value = "新增订单与库存", notes = "用于测试seata分布式事务", httpMethod = "POST")

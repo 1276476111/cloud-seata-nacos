@@ -75,11 +75,11 @@
             <AppenderRef ref="Console"/>
         </Root>
 
-        <!-- 测试，生产环境使用 -->
-        <Root level="${LOG_INFO_LEVEL}" includeLocation="false">
-            <AppenderRef ref="RollingRandomAccessFileInfo"/>
-            <AppenderRef ref="RollingRandomAccessFileError"/>
-        </Root>
+<!--        &lt;!&ndash; 测试，生产环境使用 &ndash;&gt;-->
+<!--        <Root level="${LOG_INFO_LEVEL}" includeLocation="false">-->
+<!--            <AppenderRef ref="RollingRandomAccessFileInfo"/>-->
+<!--            <AppenderRef ref="RollingRandomAccessFileError"/>-->
+<!--        </Root>-->
     </Loggers>
 
 </Configuration>
